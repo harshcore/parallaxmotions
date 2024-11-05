@@ -1,3 +1,4 @@
-import { ReactComponent as ColderSvg } from "./codler.svg";
+import { ReactComponent as CodlerSvg } from "./codler.svg";
+import { ReactComponent as CurvelineSvg } from "./curveline.svg";
 
-export { ColderSvg };
+export { CodlerSvg, CurvelineSvg };

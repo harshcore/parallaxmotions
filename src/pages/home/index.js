@@ -1,5 +1,5 @@
 import { BiSolidDonateHeart } from "react-icons/bi";
-import { ColderSvg } from "../../assets/svg";
+import { CodlerSvg, CurvelineSvg } from "../../assets/svg";
 import { motion } from "framer-motion";
 
 const NavItem = ({ title, className = "" }) => {
@@ -19,7 +19,7 @@ const Navbar = () => {
     <motion.div
       initial={{ y: "-100vh", opacity: 0 }} // Start above the viewport
       animate={{ y: 0, opacity: 1 }} // Drop to the initial position
-      transition={{ duration: 0.8, delay: 0.2, ease: "anticipate" }}
+      transition={{ duration: 0.6, ease: "anticipate" }}
       className="flex gap-x-1 items-center h-10 rounded-full bg-white/75 bg-gradient-to-r from-pink-200/40 via-violet-200/40 to-indigo-200/40 border border-white/50 px-3 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-800/[.075] backdrop-blur-xl"
     >
       <NavItem title={"Home"} />
@@ -37,7 +37,7 @@ const HeaderLogo = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "anticipate" }}
+      transition={{ duration: 0.6, ease: "anticipate" }}
       className="flex items-center w-36"
     >
       <img src="./logo.png" alt="logo" className="w-10 h-10" />
@@ -51,7 +51,7 @@ const HeaderDonateButton = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "anticipate" }}
+      transition={{ duration: 0.6, ease: "anticipate" }}
       className="w-36 flex items-center justify-between h-10 rounded-full bg-white/75 bg-gradient-to-r from-pink-200/40 via-violet-200/40 to-indigo-200/40 border border-white/50 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-800/[.075] backdrop-blur-xl"
     >
       <a
@@ -80,10 +80,46 @@ const Header = () => {
   );
 };
 
+const Heading = () => {
+  return (
+    <div className="relative container lg:max-w-3xl m-auto mt-40">
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
+        className="text-6xl font-mackinac text-center text-[#281950]"
+      >
+        Join Us Protecting Our{" "}
+        <em>
+          Precious{" "}
+          <span className="relative">
+            Birds <CurvelineSvg className="absolute bottom-0 left-0 w-full" />
+          </span>
+        </em>
+      </motion.h2>
+      <motion.p
+        initial={{ y: "30px", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
+        className="font-fricolage text-lg text-[#281950] my-8 mx-10 text-center"
+      >
+        <b>Over 3 billion birds </b>
+        <span className="opacity-75">
+          have been lost since the 1970s due to habitat destruction, pollution,
+          and climate change. This alarming decline threatens ecosystems and
+          biodiversity. Join us in protecting these precious species and
+          ensuring their survival for future generations. Your support matters!
+        </span>
+      </motion.p>
+    </div>
+  );
+};
+
 const Hero = () => {
   return (
-    <section className="h-screen w-full">
+    <section className="h-screen w-full relative">
       <Header />
+      <Heading />
     </section>
   );
 };
@@ -91,7 +127,7 @@ const Hero = () => {
 const Home = () => {
   return (
     <main>
-      <ColderSvg className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full min-w-[80rem] h-auto" />
+      <CodlerSvg className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full h-auto" />
       <Hero />
     </main>
   );
