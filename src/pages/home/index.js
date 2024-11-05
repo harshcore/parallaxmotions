@@ -1,5 +1,6 @@
 import { BiSolidDonateHeart } from "react-icons/bi";
 import { ColderSvg } from "../../assets/svg";
+import { motion } from "framer-motion";
 
 const NavItem = ({ title, className = "" }) => {
   return (
@@ -15,29 +16,44 @@ const NavItem = ({ title, className = "" }) => {
 
 const Navbar = () => {
   return (
-    <div className="flex gap-x-1 items-center h-10 rounded-full bg-white/75 bg-gradient-to-r from-pink-200/40 via-violet-200/40 to-indigo-200/40 border border-white/50 px-3 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-800/[.075] backdrop-blur-xl">
+    <motion.div
+      initial={{ y: "-100vh", opacity: 0 }} // Start above the viewport
+      animate={{ y: 0, opacity: 1 }} // Drop to the initial position
+      transition={{ duration: 0.8, delay: 0.2, ease: "anticipate" }}
+      className="flex gap-x-1 items-center h-10 rounded-full bg-white/75 bg-gradient-to-r from-pink-200/40 via-violet-200/40 to-indigo-200/40 border border-white/50 px-3 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-800/[.075] backdrop-blur-xl"
+    >
       <NavItem title={"Home"} />
       <NavItem title={"Articles"} />
       <NavItem title={"Docs"} />
       <NavItem title={"Partners"} />
       <NavItem title={"Community"} />
       <NavItem title={"About"} />
-    </div>
+    </motion.div>
   );
 };
 
 const HeaderLogo = () => {
   return (
-    <div className="flex items-center w-36">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "anticipate" }}
+      className="flex items-center w-36"
+    >
       <img src="./logo.png" alt="logo" className="w-10 h-10" />
       <h2 className="font-fragment ml-3 text-xl font-bold ">Fly.org</h2>
-    </div>
+    </motion.div>
   );
 };
 
 const HeaderDonateButton = () => {
   return (
-    <div className="w-36 flex items-center justify-between h-10 rounded-full bg-white/75 bg-gradient-to-r from-pink-200/40 via-violet-200/40 to-indigo-200/40 border border-white/50 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-800/[.075] backdrop-blur-xl">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "anticipate" }}
+      className="w-36 flex items-center justify-between h-10 rounded-full bg-white/75 bg-gradient-to-r from-pink-200/40 via-violet-200/40 to-indigo-200/40 border border-white/50 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-800/[.075] backdrop-blur-xl"
+    >
       <a
         href="/"
         className="flex justify-center items-center font-fricolage flex-none group relative text-base sm:text-sm ml-1 flex-grow my-1 bg-clip-padding rounded-l-[20px] rounded-r-[8px] border h-8 pl-3 pr-[10px] bg-white/40 border-white/90 shadow hover:text-violet-600 hover:bg-violet-50/40 transition-colors duration-300"
@@ -50,7 +66,7 @@ const HeaderDonateButton = () => {
       >
         <BiSolidDonateHeart />
       </a>
-    </div>
+    </motion.div>
   );
 };
 
