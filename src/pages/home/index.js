@@ -1,6 +1,8 @@
 import { BiSolidDonateHeart } from "react-icons/bi";
 import { CodlerSvg, CurvelineSvg } from "../../assets/svg";
+import birdsflyingPng from "../../assets/img/birdsflying.png";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const NavItem = ({ title, className = "" }) => {
   return (
@@ -55,12 +57,32 @@ const HeaderDonateButton = () => {
 };
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <motion.header
       initial={{ y: "-60px", opacity: 0 }} // Start above the viewport
       animate={{ y: 0, opacity: 1 }} // Drop to the initial position
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="sticky top-0 p-4 flex items-center justify-between"
+      className={`sticky top-0 p-4 flex items-center justify-between z-10 ${
+        isScrolled ? "backdrop-blur-sm" : "backdrop-blur-0"
+      }`}
     >
       <HeaderLogo />
       <Navbar />
@@ -107,6 +129,11 @@ const Heading = () => {
 const Hero = () => {
   return (
     <section className="h-screen w-full relative">
+      <img
+        src={birdsflyingPng}
+        alt="birdsflying"
+        className="absolute top-full -translate-x-1/2 left-1/2 opacity-45"
+      />
       <Header />
       <Heading />
     </section>
