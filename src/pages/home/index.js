@@ -17,12 +17,11 @@ const NavItem = ({ title, className = "" }) => {
 const Navbar = () => {
   return (
     <motion.div
-      initial={{ y: "-100vh", opacity: 0 }} // Start above the viewport
+      initial={{ y: "-60px", opacity: 0 }} // Start above the viewport
       animate={{ y: 0, opacity: 1 }} // Drop to the initial position
-      transition={{ duration: 0.6, ease: "anticipate" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="flex gap-x-1 items-center h-10 rounded-full bg-white/75 bg-gradient-to-r from-pink-200/40 via-violet-200/40 to-indigo-200/40 border border-white/50 px-3 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-800/[.075] backdrop-blur-xl"
     >
-      <NavItem title={"Home"} />
       <NavItem title={"Articles"} />
       <NavItem title={"Docs"} />
       <NavItem title={"Partners"} />
@@ -34,15 +33,16 @@ const Navbar = () => {
 
 const HeaderLogo = () => {
   return (
-    <motion.div
+    <motion.a
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: "anticipate" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="flex items-center w-36"
+      href="/"
     >
       <img src="./logo.png" alt="logo" className="w-10 h-10" />
       <h2 className="font-fragment ml-3 text-xl font-bold ">Fly.org</h2>
-    </motion.div>
+    </motion.a>
   );
 };
 
@@ -51,7 +51,7 @@ const HeaderDonateButton = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: "anticipate" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="w-36 flex items-center justify-between h-10 rounded-full bg-white/75 bg-gradient-to-r from-pink-200/40 via-violet-200/40 to-indigo-200/40 border border-white/50 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-800/[.075] backdrop-blur-xl"
     >
       <a
