@@ -2,6 +2,7 @@ import { BiSolidDonateHeart } from "react-icons/bi";
 import { CodlerSvg, CurvelineSvg } from "../../assets/svg";
 // import birdsflyingPng from "../../assets/img/birdsflying.png";
 import cloudcityPng from "../../assets/img/cloud-city.png";
+import flyglobePng from "../../assets/img/fly-globe.png";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { PrimaryButton } from "../../components/buttons";
@@ -138,7 +139,7 @@ const Heading = () => {
 
 const Hero = () => {
   return (
-    <section className="w-full relative pt-20">
+    <section className="w-full relative pt-20 shadow-lg shadow-b">
       <Heading />
       <motion.img
         initial={{ opacity: 0 }}
@@ -154,11 +155,27 @@ const Hero = () => {
 
 const BirdsChirping = () => {
   return (
-    <section className="container mx-auto py-24 xl:py-32 px-4 sm:px-6 lg:px-8 grid gap-20 items-center">
-      <div>
-        <h2>BirdsChirping</h2>
+    <section className="max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-16 mt-40">
+      <div className="lg:grid grid-cols-2 gap-x-8 xl:gap-x-16 items-start">
+        <div className="relative lg:max-w-xl space-y-4 lg:pb-20">
+          <h2 className="font-mackinac text-[36px]">
+            Did You Know? Since 1970, North America has lost 29% of its bird
+            population.
+          </h2>
+          <p className="font-fricolage text-[#281950] mt-4 text-[19px]">
+            The sharp decline in North America’s bird populations reflects
+            pressing issues like habitat destruction, climate change, and
+            pesticide impacts. This loss, affecting over three billion birds,
+            weakens ecosystems and highlights an urgent need for conservation
+            efforts to protect remaining avian diversity and habitats.
+          </p>
+        </div>
+        <img
+          alt="flyglobePng"
+          src={flyglobePng}
+          className="w-full max-w-sm -mb-12 mx-auto relative lg:-mt-4"
+        />
       </div>
-      <div></div>
     </section>
   );
 };
