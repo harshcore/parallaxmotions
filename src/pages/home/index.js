@@ -1,8 +1,9 @@
 import { BiSolidDonateHeart } from "react-icons/bi";
 import { CodlerSvg, CurvelineSvg } from "../../assets/svg";
-import birdsflyingPng from "../../assets/img/birdsflying.png";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+// import birdsflyingPng from "../../assets/img/birdsflying.png";
+import cloudcityPng from "../../assets/img/cloud-city.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const NavItem = ({ title, className = "" }) => {
   return (
@@ -93,7 +94,7 @@ const Header = () => {
 
 const Heading = () => {
   return (
-    <div className="relative container lg:max-w-3xl m-auto mt-40">
+    <div className="relative container lg:max-w-3xl m-auto">
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -128,24 +129,32 @@ const Heading = () => {
 
 const Hero = () => {
   return (
-    <section className="h-screen w-full relative">
-      <img
-        src={birdsflyingPng}
-        alt="birdsflying"
-        className="absolute top-full -translate-x-1/2 left-1/2 opacity-45"
-      />
-      <Header />
+    <section className="h-[calc(100vh-72px)] w-full relative pt-40">
       <Heading />
+      <img alt="cloud-city" src={cloudcityPng} className="absolute bottom-0" />
+    </section>
+  );
+};
+
+const BirdsChirping = () => {
+  return (
+    <section className="bg-violet-500 h-screen">
+      <div>
+        <h2></h2>
+      </div>
+      <div></div>
     </section>
   );
 };
 
 const Home = () => {
   return (
-    <main>
+    <>
       <CodlerSvg className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-full h-auto" />
+      <Header />
       <Hero />
-    </main>
+      <BirdsChirping />
+    </>
   );
 };
 
