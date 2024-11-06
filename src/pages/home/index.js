@@ -169,6 +169,7 @@ const BirdsChirping = () => {
             weakens ecosystems and highlights an urgent need for conservation
             efforts to protect remaining avian diversity and habitats.
           </p>
+          <div className="w-full h-[1px] bg-gradient-to-r from-[#A39AC1] via-[rgba(163,154,193,0.35)] to-transparent space-y-reverse-0 border-0 outline-none ring-0 shadow-none"></div>
         </div>
         <img
           alt="flyglobePng"
