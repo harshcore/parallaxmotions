@@ -4,8 +4,9 @@ import { CodlerSvg, CurvelineSvg } from "../../assets/svg";
 import cloudcityPng from "../../assets/img/cloud-city.png";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { PrimaryButton } from "../../components/buttons";
 
-const NavItem = ({ title, className = "" }) => {
+const NavItem = ({ title }) => {
   return (
     <a
       href="/"
@@ -94,7 +95,7 @@ const Header = () => {
 
 const Heading = () => {
   return (
-    <div className="relative container lg:max-w-3xl m-auto">
+    <div className="relative container lg:max-w-3xl mx-auto">
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -113,7 +114,7 @@ const Heading = () => {
         initial={{ y: "30px", opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
-        className="font-fricolage text-lg text-[#281950] my-8 mx-10 text-center"
+        className="font-fricolage text-lg text-[#281950] mt-8 mx-10 text-center"
       >
         <b>Over 3 billion birds </b>
         <span className="opacity-75">
@@ -123,13 +124,21 @@ const Heading = () => {
           ensuring their survival for future generations. Your support matters!
         </span>
       </motion.p>
+      <motion.div
+        initial={{ y: "30px", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
+        className="flex justify-center mt-10"
+      >
+        <PrimaryButton>Join the Community</PrimaryButton>
+      </motion.div>
     </div>
   );
 };
 
 const Hero = () => {
   return (
-    <section className="h-[calc(100vh-72px)] w-full relative pt-40">
+    <section className="w-full relative pt-20">
       <Heading />
       <motion.img
         initial={{ opacity: 0 }}
@@ -137,7 +146,7 @@ const Hero = () => {
         transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
         alt="cloud-city"
         src={cloudcityPng}
-        className="absolute bottom-0"
+        className=""
       />
     </section>
   );
@@ -145,7 +154,7 @@ const Hero = () => {
 
 const BirdsChirping = () => {
   return (
-    <section className="h-screen">
+    <section className="container mx-auto py-24 xl:py-32 px-4 sm:px-6 lg:px-8 grid gap-20 items-center">
       <div>
         <h2>BirdsChirping</h2>
       </div>
