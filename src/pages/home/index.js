@@ -2,8 +2,8 @@ import { BiSolidDonateHeart } from "react-icons/bi";
 import { CodlerSvg, CurvelineSvg } from "../../assets/svg";
 // import birdsflyingPng from "../../assets/img/birdsflying.png";
 import cloudcityPng from "../../assets/img/cloud-city.png";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const NavItem = ({ title, className = "" }) => {
   return (
@@ -131,16 +131,23 @@ const Hero = () => {
   return (
     <section className="h-[calc(100vh-72px)] w-full relative pt-40">
       <Heading />
-      <img alt="cloud-city" src={cloudcityPng} className="absolute bottom-0" />
+      <motion.img
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
+        alt="cloud-city"
+        src={cloudcityPng}
+        className="absolute bottom-0"
+      />
     </section>
   );
 };
 
 const BirdsChirping = () => {
   return (
-    <section className="bg-violet-500 h-screen">
+    <section className="h-screen">
       <div>
-        <h2></h2>
+        <h2>BirdsChirping</h2>
       </div>
       <div></div>
     </section>
