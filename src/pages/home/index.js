@@ -160,7 +160,7 @@ const BirdsChirping = () => {
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -200 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
           className="relative lg:max-w-xl space-y-4 lg:pb-20"
         >
@@ -180,7 +180,7 @@ const BirdsChirping = () => {
         <motion.img
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 200 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
           alt="flyglobePng"
           src={flyglobePng}
