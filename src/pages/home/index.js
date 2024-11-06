@@ -157,7 +157,13 @@ const BirdsChirping = () => {
   return (
     <section className="max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-16 mt-40">
       <div className="lg:grid grid-cols-2 gap-x-8 xl:gap-x-16 items-start">
-        <div className="relative lg:max-w-xl space-y-4 lg:pb-20">
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -200 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="relative lg:max-w-xl space-y-4 lg:pb-20"
+        >
           <h2 className="font-mackinac text-[36px]">
             Did You Know? Since 1970, North America has lost 29% of its bird
             population.
@@ -170,8 +176,12 @@ const BirdsChirping = () => {
             efforts to protect remaining avian diversity and habitats.
           </p>
           <div className="w-full h-[1px] bg-gradient-to-r from-[#A39AC1] via-[rgba(163,154,193,0.35)] to-transparent space-y-reverse-0 border-0 outline-none ring-0 shadow-none"></div>
-        </div>
-        <img
+        </motion.div>
+        <motion.img
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 200 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           alt="flyglobePng"
           src={flyglobePng}
           className="w-full max-w-sm -mb-12 mx-auto relative lg:-mt-4"
