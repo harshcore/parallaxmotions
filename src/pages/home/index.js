@@ -139,7 +139,7 @@ const Heading = () => {
 
 const Hero = () => {
   return (
-    <section className="w-full relative pt-20 shadow-lg shadow-b">
+    <section className="w-full relative pt-20 shadow-lg shadow-b min-h-screen">
       <Heading />
       <motion.img
         initial={{ opacity: 0 }}
